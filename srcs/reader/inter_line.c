@@ -43,7 +43,7 @@ static int		check_key_next(t_read *t_r, int *end, t_key key)
 		k_home(key, t_r, end);
 	else if (ft_strncmp(t_r->c_key, key.end, 4) == 0 && t_r->multi == 0)
 		k_end(key, t_r, end);
-	else if (t_r->t == 127 && *end > 0
+	else if ((t_r->t == 127 || t_r->t == 8) && *end > 0
 		&& (t_r->multi == 0 || *end - 1 > t_r->multi))
 		k_del(t_r, end, key);
 	else if (ft_strlen(t_r->c_key) == 0 && (t_r->t >= 32 && t_r->t <= 126))
