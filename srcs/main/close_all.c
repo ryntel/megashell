@@ -42,7 +42,7 @@ void		close_and_wait(t_pipe *pip, t_env *enviro, t_main *hub)
 	pid = 0;
 	close_pipe(pip);
 	v = 0;
-	while (v < pip->founded)
+	while (v < pip->total)
 	{
 		while (pip->pid[v] == -1)
 			++v;
